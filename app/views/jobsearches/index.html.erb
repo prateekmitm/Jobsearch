@@ -1,0 +1,46 @@
+<div>
+<%if current_user.admin?%>
+<h3 style="padding-top: 40px;" align ="center">Listing jobsearches</h3>
+
+<h5 style="margin-left: 48px;"><%= link_to 'New Jobsearch', new_jobsearch_path ,:class=>"btn btn" if current_user.admin?%></h5>
+        <%if !@jobsearches.nil?%>
+
+         <table border="1"  style="width: 75%; margin-left: 50px;">
+          <tr>
+            <th>Keyword</th>
+            <th>Emp type</th>
+            <th>Job categories</th>
+            <th>Industry</th>
+            <th>Desired salary</th>
+            <th>Languages</th>
+            <th>Japan lang level</th>
+            <th>Eng lang level</th>
+            <th>Position level</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+
+            <% @jobsearches.each do |jobsearch| %>
+              <tr>
+                <td><%= jobsearch.keyword %></td>
+                <td><%= jobsearch.emp_type %></td>
+                <td><%= jobsearch.job_categories %></td>
+                <td><%= jobsearch.industry %></td>
+                <td><%= jobsearch.desired_salary %></td>
+                <td><%= jobsearch.languages %></td>
+                <td><%= jobsearch.japan_lang_level %></td>
+                <td><%= jobsearch.eng_lang_level %></td>
+                <td><%= jobsearch.position_level %></td>
+                <td><%= link_to 'Show', jobsearch %></td>
+                <td><%= link_to 'Edit', edit_jobsearch_path(jobsearch) %></td>
+                <td><%= link_to 'Destroy', jobsearch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+        </table>
+       <%end%>
+<br />
+
+
+<%end%>
+</div>

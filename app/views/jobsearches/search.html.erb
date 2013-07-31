@@ -1,0 +1,96 @@
+<div id="search_form">
+<div align="center">
+  <h3 style="padding-top: 40px;">JOB SEARCH</h3>
+<div id="my-form">
+<%= form_tag display_jobsearches_path, {:method => 'get' } do %>
+  <table border="1">
+    <tr>
+      <th class="span3">Name</th>
+      <td>
+        <%= text_field_tag 'keyword', params[:keyword], {:maxlength => 32, :class => "span5", :id => "Keyword"} %>
+      </td>
+    </tr>
+       <tr>
+      <th class="span3">Emp Type</th>
+      <td>
+        <%= check_box_tag "emp_type[]" , "Employer",nil,{:class => "span5", :id => "Emp Type1"}%> Employer<br/>
+        <%= check_box_tag "emp_type[]" , "Recruiter",nil,{:class => "span5", :id => "Emp Type2"}%> Recruiter<br/>
+        <%= check_box_tag "emp_type[]" , "StaffingAgency",nil,{:class => "span5", :id => "Emp Type3"} %> Staffing Agency
+
+        <br/>
+
+      </td>
+    </tr> 
+    
+      <tr>
+      <th class="span3">Job Categories</th>
+      <td>
+        <%= select_tag :job_categories, options_for_select(["None","  IT (Hardware/Network)","IT (Embedded Software, Control Systems)","Electronics (Appliance/Semiconductor)","Medical/Pharmaceutical/Bio/Fabric/Food"," Building/Construction/Equipment/Real Estate","Finance/Accounting ","Administrative ","Customer Service ","Finance/Bank/Securities " ]),{:class => "span5", :id => "Job Categories"} %>
+      </td>
+    </tr>
+
+      <tr>
+      <th class="span3">Industry</th>
+      <td>
+        <%= select_tag :industry, options_for_select(["None","Computer/OA Equipment/Telecommunication Equipment ","Software (Consignment Development)","Electronics/Consumer Electronics Manufacturing ","IT - Other"]),{:class => "span5", :id => "Industry"} %>
+      </td>
+    </tr>
+
+    <tr>
+      <th class="span3">Desired Salary</th>
+      <td>
+        <%= text_field_tag 'desired_salary', params[:salary], {:maxlength => 32, :class => "span5", :id => "Desired Salary"} %>
+      </td>
+    </tr>
+
+    <tr>
+      <th class="span3">Language</th>
+      <td>
+        <%= select_tag :languages, options_for_select(["None","English","Japanese","French ","German","Italian", params[:language]]),{:class => "span5", :id => "Language"} %>
+      </td>
+    </tr>
+
+    <tr>
+      <th class="span3">Japan Language Level</th>
+      <td>
+        <%= select_tag :japan_lang_level, options_for_select(["None","Conversational ","Low Intermediate (JLPT Level 4)","Intermediate (JLPT Level 3)","High Intermediate (JLPT Level 2)","Advanced (JLPT Level 1) ","Fluent","Native"]),{:class => "span5", :id => "Japan Language Level"} %>
+      </td>
+    </tr>
+
+    <tr>
+      <th class="span3">English Language Level</th>
+      <td>
+        <%= select_tag :eng_lang_level, options_for_select(["None","Conversational (TOEIC 350) ","Low Intermediate (TOEIC 470)","High Intermediate (TOEIC 730) ","Advanced (TOEIC 860)","Advanced (TOEIC 860)","Fluent (TOEIC 990)","Native"]),{:class => "span5", :id => "English Language Level"} %>
+      </td>
+    </tr>
+
+      <tr>
+      <th class="span3">Position Level</th>
+      <td>
+        <%= check_box_tag "position_level[]" , "ExecutiveLevel",nil,{:class => "span5", :id => "Position Level1"}%> Executive Level<br/>
+        <%= check_box_tag "position_level[]", "ManagerLevel",nil,{:class => "span5", :id => "Position Level2"}%> Manager Level<br/>
+        <%= check_box_tag "position_level[]", "SeniorLevel",nil,{:class => "span5", :id => "Position Level3"} %> Senior Level<br/>
+        <%= check_box_tag "position_level[]", "StaffLevel",nil,{:class => "span5", :id => "Position Level4"} %> Staff Level<br/>
+        <%= check_box_tag "position_level[]", "EntryLevel",nil,{:class => "span5", :id => "Position Level5"} %> Entry Level<br/>
+      </td>
+    </tr> 
+
+
+    <tr>
+      <th></th>
+      <td>
+        <%= button_tag('Search', {:class => 'btn', :type => 'submit'}) %>
+      </td>
+    </tr>
+  </table>
+
+<%= link_to 'Back', jobsearches_path,:class=>"btn btn" %>
+</div>
+
+<div>
+
+
+<% end %>
+</div>
+
+</div>

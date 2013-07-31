@@ -1,0 +1,67 @@
+<%= form_for(@jobsearch) do |f| %>
+  <% if @jobsearch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jobsearch.errors.count, "error") %> prohibited this jobsearch from being saved:</h2>
+
+      <ul>
+      <% @jobsearch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :keyword %><br />
+    <%= f.text_field :keyword %>
+  </div>
+  <div class="field">
+    <%= f.label :emp_type %><br />  
+
+    <%= f.check_box :emp_type,{:multiple => true, :id => "Emp Type1"}, "Employer",nil%> Employer<br/>
+    <%= f.check_box :emp_type ,{:multiple => true, :id => "Emp Type1"}, "Recruiter",nil%> Recruiter<br/>
+    <%= f.check_box :emp_type , {:multiple => true, :id => "Emp Type1"},"StaffingAgency",nil %> Staffing Agency</div>
+
+    
+
+  <div class="field">
+    <%= f.label :job_categories %><br />
+    <%= f.select :job_categories, options_for_select([["None","None"],["IT (Hardware/Network)","  IT (Hardware/Network)"],["IT (Embedded Software, Control Systems)","IT (Embedded Software, Control Systems)"],["Electronics (Appliance/Semiconductor)","Electronics (Appliance/Semiconductor)"],["Medical/Pharmaceutical/Bio/Fabric/Food","Medical/Pharmaceutical/Bio/Fabric/Food"],["Building/Construction/Equipment/Real Estate"," Building/Construction/Equipment/Real Estate"],["Finance/Accounting ","Finance/Accounting "],["Administrative ","Administrative "],["Customer Service ","Customer Service "],["Finance/Bank/Securities ","Finance/Bank/Securities "]]) %>
+    <%#= f.text_field :job_categories %>
+  </div>
+  <div class="field">
+    <%= f.label :industry %><br />
+
+    <%= f.select :industry, options_for_select([["None","None"],["Computer/OA Equipment/Telecommunication Equipment ","Computer/OA Equipment/Telecommunication Equipment "],["Software (Consignment Development) ","Software (Consignment Development) "],["Outsourcing","Outsourcing"],["Electronics/Consumer Electronics Manufacturing "," Electronics/Consumer Electronics Manufacturing "],["IT - Other","IT - Other"]]) %>
+    <%#= f.text_field :industry %>
+  </div>
+  <div class="field">
+    <%= f.label :desired_salary %><br />
+     <%#= f.select :desired_salary, options_for_select([["None","None"],["0 - 5000 "," 0- 5000"],["5000 - 10000 ","5000- 10000 "],["10000-15000","10000-15000"],["15000 - 20000 ","15000 - 20000"],["20000 - 25000","20000 - 25000"],["other","other"]]) %>
+    <%= f.number_field :desired_salary %>
+  </div>
+  <div class="field">
+    <%= f.label :languages %><br />
+    <%=f.select :languages, options_for_select([["None","None"],["English","English"],["Japanese","Japanese"],["French","French"],["German","German"],["Italian","Italian"]]) %>
+    <%#= f.text_field :languages %>
+  </div>
+  <div class="field">
+    <%= f.label :japan_lang_level %><br />
+    <%= f.select :japan_lang_level, options_for_select([["None","None"],["Conversational","Conversational"],["Low Intermediate (JLPT Level 4)","Low Intermediate (JLPT Level 4)"],["Intermediate (JLPT Level 3)","Intermediate (JLPT Level 3)"],["High Intermediate (JLPT Level 2)","High Intermediate (JLPT Level 2)"],["Advanced (JLPT Level 1)","Advanced (JLPT Level 1)"],["Fluent","Fluent"],["Native","Native"]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :eng_lang_level %><br />
+    <%= f.select :eng_lang_level, options_for_select([["None","None"],["Conversational (TOEIC 350)","Conversational (TOEIC 350)"],["Low Intermediate (TOEIC 470)","Low Intermediate (TOEIC 470)"],["Low Intermediate (TOEIC 470)","Low Intermediate (TOEIC 470)"],["High Intermediate (TOEIC 730)","High Intermediate (TOEIC 730)"],["Advanced (TOEIC 860)","Advanced (TOEIC 860)"],["Fluent (TOEIC 990)","Fluent (TOEIC 990)"],["Native","Native"]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :position_level %><br />
+    <%= f.check_box :position_level ,{:multiple => true, :id => "Position Level1"}, "ExecutiveLevel",nil%> Executive Level<br/>
+    <%= f.check_box :position_level,{:multiple => true, :id => "Position Level2"}, "ManagerLevel",nil%> Manager Level<br/>
+    <%= f.check_box :position_level,{:multiple => true, :id => "Position Level3"}, "SeniorLevel",nil %> Senior Level<br/>
+    <%= f.check_box :position_level,{:multiple => true, :id => "Position Level4"}, "StaffLevel",nil %> Staff Level<br/>
+    <%= f.check_box :position_level,{:multiple => true, :id => "Position Level5"}, "EntryLevel",nil %> Entry Level<br/>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

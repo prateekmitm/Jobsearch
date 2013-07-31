@@ -1,0 +1,34 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></a>
+      <a class="brand" href="<%= root_path %>">Job Search</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li>
+            <a href="#about"><%#= social_share_button_tag("Neomezené tarify pod 500 Kč?") %></a>
+
+          </li>
+          
+          <% if current_user  %>
+          <li> <%= link_to "Search",  search_jobsearches_path%></li>
+           
+          <%end%>
+        </ul>
+        <p class="navbar-text pull-right">
+          <% if user_signed_in? %>
+               <%= link_to "ProfileUpdate",edit_user_registration_path %>
+              &nbsp;&nbsp; &nbsp;<%= link_to "Sign out",destroy_user_session_path,:method=>:delete %>
+              <%else%>
+               <%= link_to "Sign in",new_user_session_path %>
+               <%= link_to "Sign up",new_user_registration_path %>
+         <%end%>
+        </p>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </div>
+  <!--/.navbar-inner -->
+</div>
+<!--/.navbar -->

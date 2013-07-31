@@ -1,0 +1,52 @@
+</br></br>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Keyword:</b>
+  <%= @jobsearch.keyword %>
+</p>
+
+<p>
+
+  <b>Emp type:</b>
+  <%= @jobsearch.emp_type %>
+</p>
+
+<p>
+  <b>Job categories:</b>
+  <%= @jobsearch.job_categories %>
+</p>
+
+<p>
+  <b>Industry:</b>
+  <%= @jobsearch.industry %>
+</p>
+
+<p>
+  <b>Desired salary:</b>
+  <%= @jobsearch.desired_salary %>
+</p>
+
+<p>
+  <b>Languages:</b>
+  <%= @jobsearch.languages %>
+</p>
+
+<p>
+  <b>Japan lang level:</b>
+  <%= @jobsearch.japan_lang_level %>
+</p>
+
+<p>
+  <b>Eng lang level:</b>
+  <%= @jobsearch.eng_lang_level %>
+</p>
+
+<p>
+  <b>Position level:</b>
+  <%= @jobsearch.position_level %>
+</p>
+
+
+<%= link_to 'Edit', edit_jobsearch_path(@jobsearch),:class=>"btn btn" %> 
+<%= link_to 'Back', jobsearches_path,:class=>"btn btn" %>

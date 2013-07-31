@@ -1,0 +1,29 @@
+<div style="padding-left: 10px;">
+<h3 style="padding-top: 40px;">User Registration</h3>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html => { :multipart => true }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+  
+  <div><%= f.label :Name %><br />
+  <%= f.text_field :name, :autofocus => true %></div>
+
+  <div><%= f.label :Mobile_Number %><br />
+  <%= f.text_field :mobile_number, :autofocus => true %></div>
+
+  <div><%= f.label :resume %><br />
+  <%= f.file_field :resume %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

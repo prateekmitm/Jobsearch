@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  keyword: MyString
+  emp_type: MyString
+  job_categories: MyString
+  industry: MyString
+  desired_salary: 1
+  languages: MyString
+  japan_lang_level: MyString
+  eng_lang_level: MyString
+  position_level: MyString
+
+two:
+  keyword: MyString
+  emp_type: MyString
+  job_categories: MyString
+  industry: MyString
+  desired_salary: 1
+  languages: MyString
+  japan_lang_level: MyString
+  eng_lang_level: MyString
+  position_level: MyString
